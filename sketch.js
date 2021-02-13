@@ -15,7 +15,7 @@ function setup(){
     block1.shapeColor = rgb(0,0,255);
 
     block2 = createSprite(295,580,200,30);
-    block2.shapeColor = rgb(255,128,0);
+    block2.shapeColor = "black";
 
     block3 = createSprite(515,580,200,30);
     block3.shapeColor = rgb(153,0,76);
@@ -35,13 +35,13 @@ function draw() {
     edges=createEdgeSprites();
     ball.bounceOff(edges);
 
-    if(block1.isTouching(ball) && ball.bounceOff()){
+    if(block1.isTouching(ball) && ball.bounceOff(block1)){
         ball.shapeColor = rgb(0,0,255);
         music.play();
     }
 
     if(block2.isTouching(ball)){
-        ball.shapeColor = rgb(255,128,0);
+        ball.shapeColor = "black";
         ball.velocityX = 0;
         ball.velocityY = 0;
         music.stop();
